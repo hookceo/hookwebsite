@@ -2,7 +2,7 @@
 title: 'nova'
 description: 'Learn, Grow, Learn. All in one learner platform.'
 pubDate: 'Jul 08 2022'
-heroImage: '/public/Group 132.png'
+heroImage: '/Group 132.png'
 position: 1
 ---
 
