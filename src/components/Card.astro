@@ -1,0 +1,100 @@
+---
+
+
+interface Props {
+text: string,
+image: string
+}
+const { text, image } = Astro.props;
+
+---
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body>
+    <div class="parent">
+
+        <img src={ image } alt="" class="parent">
+        <h1>{ text }</h1>
+
+
+
+
+
+    </div>
+</body>
+</html>
+
+
+
+
+<style>
+
+div {
+
+
+}
+
+
+
+.parent {
+
+margin: 0px;
+padding: 0px;
+border-radius: 0px;
+
+position: relative;
+
+}
+
+.color {
+
+
+
+
+}
+.colortwo {
+
+
+}
+
+
+@media (max-width: 810px) {
+    .parent {
+        height: 60px;
+        margin-bottom: 10px;
+    }
+
+    img {
+        object-fit: cover;
+    }
+}
+h1{
+    position: absolute;
+
+color: rgb(36, 36, 36);
+font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+font-size: 20px;
+top: 0;
+left: 0;
+padding: 30px;
+padding-top: 22px;
+
+}
+
+img {
+width: 100%;
+opacity: 1;
+height: 200px;
+border: 2px solid rgba(236, 236, 236, 0.579);
+transition: all 0.4s ease 0s;
+}
+
+
+img:hover {
+
+    border: 2px solid rgba(194, 194, 194, 0.579);
+
+}
+</style>

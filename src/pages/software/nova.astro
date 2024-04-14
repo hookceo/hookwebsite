@@ -1,0 +1,276 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../../components/FormattedDate.astro';
+import MoreFromHook from '../../components/MoreFromHook.astro';
+import Download from '../../components/Download.astro';
+import Card from '../../components/Card.astro';
+const posts = (await getCollection('software')).sort(
+    (a, b) => a.data.position.valueOf() - b.data.position.valueOf()
+);
+
+
+
+const novabox = (await getCollection('nova')).sort(
+    (a, b) => a.data.position.valueOf() - b.data.position.valueOf()
+)
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			
+			ul {
+                display: flex;
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+
+                padding-inline-start: 0px;
+                padding: 40px;
+				gap: 2rem;
+				list-style-type: none;
+
+			}
+		
+
+
+			
+			
+	
+			
+		
+			
+			
+			
+			@media (max-width: 810px) {
+
+                .productcard {
+        text-align: left;
+
+    }
+
+    .subcard{
+        background-color: rgb(251, 251, 251);
+        display: block;
+
+        height: 400px;
+        overflow: hidden; /* Para ocultar el contenido que exceda el tamaño del contenedor */
+        border: 1.5px solid rgb(234, 234, 234);
+    }
+
+
+
+
+    
+
+    main {
+	width: 700px;
+	max-width: calc(100% - 2em);
+	margin: auto;
+	padding: 3em 1em;
+}
+
+    ul {
+        gap: 0.5em;
+        display: flex;
+        flex-wrap: wrap;
+
+
+
+
+        width: 350px; /* Cambia el valor según tu necesidad */
+        margin: 0 auto; /* Centra horizontalmente */
+        padding: 0; /* Elimina el padding predeterminado */
+        list-style: none; /* Elimina los estilos de lista predeterminados */
+    }
+
+    .title {
+        margin: 0;
+        font-size: 25px;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .a1{
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+        background-color: yellow
+    }
+
+    a {
+        text-decoration: none;
+    }
+				ul li {
+
+					text-align: center;
+				}
+				ul li:first-child {
+					margin-bottom: 0;
+				}
+
+			}
+            .productcard {
+        text-align: left;
+        width: 300px;
+    }
+    @media (min-width: 810px) {
+    .subcard {
+        background-color: rgb(251, 251, 251);
+        display: block;
+        
+        height: 400px;
+        overflow: hidden; /* Para ocultar el contenido que exceda el tamaño del contenedor */
+        border: 1.5px solid rgb(234, 234, 234);
+    }
+
+    .cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    }
+    .imageproduct {
+        max-width: 100%; /* Ajusta el ancho máximo de la imagen al 100% del contenedor */
+        max-height: 100%; /* Ajusta la altura máxima de la imagen al 100% del contenedor */
+        display: block; /* Asegura que la imagen sea un elemento de bloque */
+        margin: auto; /* Centra la imagen horizontalmente dentro del contenedor */
+
+        box-sizing: border-box; /* Incluye el padding en el ancho y alto total del elemento */
+        
+        user-drag: none;
+        -webkit-user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+
+    
+
+    .cards  {
+        display: grid;
+
+        padding: 33px;
+
+
+
+    }
+
+    .row {
+
+    }
+
+    .left  {
+
+
+    }
+
+    .title {
+        margin: 0;
+        font-size: 20px;
+        font-family: 'Charter';
+        font-weight: 500;
+        text-decoration: none;
+        margin-bottom: 10px;
+    }
+
+
+    .position-1 {
+        font-size: 16.7px;
+        font-family: 'Charter';
+    }
+    .else-position {
+        margin: 0;
+        font-size: 15px;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+        font-weight: 500;
+        text-decoration: none;
+        margin-bottom: 10px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    h2 {
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+        font-size: 13px;
+        font-weight: 500;
+        color: gray;
+
+    }
+
+    .desc {
+        width: 300px;
+    }
+
+
+
+    .video {
+        padding: 33px;
+        width: 54%;
+
+    }
+
+    .videopre {
+        width: 100%;
+        text-align: center
+    }
+		</style>
+	</head>
+	<body>
+		<Header />
+        <div class="cards">
+            <div class="row">
+        <a href="/blog/nova-real-stories/"><Card text='Real Stories' image='/Group 89.png'/></a>
+        <a href="/blog/hook-unlimited/"><Card text='Hook Unlimited' image='/Group 91.png'/></a>
+    </div>
+         <div class="row">
+        <a href="/blog/coach-alumni-experiences/"><Card text='Coach and Alumni Experience' image='/Group 92.png'/></a>
+        <a href="/blog/nova-crowfunding/"><Card text='Nova Crowfunding' image='/Group 90.png'/></a>
+    </div>
+        </div>
+        <!--
+        <div class="videopre">
+            <img src="/Group 92.png" alt="Video" class="video">
+        </div>
+         -->
+        <Download/>
+		<div class="maintwo">
+			<section>
+				<ul>
+					{
+						novabox.map((novabox) => (
+							<li>
+                                <div class="productcard">
+                                    
+								<a href={`/software/nova`}>
+                                    <h4 class={novabox.data.position === 1 ? 'position-1' : 'else-position'}>{novabox.data.title}</h4>
+                                    <div class="subcard">
+									<img src={novabox.data.heroImage} alt="" class="imageproduct"/>
+                                </div>
+									<p class="date">
+
+									</p>
+								</a>
+                                </div>
+
+                                <h2 class="desc">{novabox.data.description}</h2>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+        </div>
+		
+        <Download/>
+        <MoreFromHook/>
+<Footer></Footer>
+	</body>
+</html>

@@ -1,0 +1,143 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../../components/FormattedDate.astro';
+
+
+
+const assets = (await getCollection('leadership')).sort(
+    (a, b) => a.data.position.valueOf() - b.data.position.valueOf()
+);
+
+---
+
+
+
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+<style>
+
+
+
+
+li {
+				display: flex;
+
+
+
+
+			}
+
+			main {
+				width: 100%;
+
+				
+
+
+			}
+			ul {
+         display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center horizontally */
+        padding-inline-start: 0px;
+        gap: 10px;
+    }
+
+
+    .personimage {
+        width: 200px;
+        height: 250px;
+        object-fit:cover;
+        border-radius: 2px;
+        opacity: 1;
+    }
+
+    h4, h3, ul, a, li, ul {
+        text-decoration: none;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+        color: black;
+        list-style-type: none;
+    }
+
+    h4 {
+        font-size: 15px;
+        margin: 0px;
+    }
+
+    h3 {
+        font-size: 13px;
+        margin: 0px;
+        margin-top: 5px;
+        color: rgb(58, 58, 58);
+
+    }
+
+    .all {
+        padding: 20px;
+        background-color: rgba(251, 251, 251, 0.506);
+        border: 2px solid rgba(243, 243, 243, 0.132);
+        border-radius: 4px;
+        width: fit-content;
+    }
+
+
+    .text {
+        margin-top: 20px;
+    }
+</style>
+
+</head>
+
+<body>
+    <Header />
+<main>
+    <section>
+        <ul>
+            {
+                assets.map((asset) => (
+                <li>
+                   <div class="all">
+                    <a href="">
+
+                        <img class="personimage" src={asset.data.heroImage} alt={asset.data.name}>
+                        <div class="text">
+                    <h4 class="title">{asset.data.name}</h4>
+                        <h3 class="role">{asset.data.role}</h3>
+                    </div>
+
+
+                    
+                        
+                        
+                        
+                        
+                    </a>
+                    </div> 
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </li>
+
+
+                )
+                
+                
+                )
+            }
+        </ul>
+    </section>
+		</main>
+		<Footer />
+	</body>
+</html>

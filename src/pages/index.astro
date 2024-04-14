@@ -1,0 +1,191 @@
+---
+
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Download from '../components/Download.astro';
+import MoreFromHook from '../components/MoreFromHook.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+
+		<div class="big">
+			<div class="content">
+				<div class="top">
+			<img src="/official-nova-icon 2.png" alt="">
+			<h1>Nova is near</h1>
+
+<div class="buttons">
+	<a href="/software/nova"><h2>Learn More</h2></a>
+	<a href="https://www.kickstarter.com" class="sp"><h2>Pledge Nova</h2></a>
+</div>
+</div>
+</div>
+		</div>
+
+
+	
+		<div class="bigtwo">
+			<div class="content">
+				<div class="top">
+			<img src="/Kickstarter_logo.svg" alt="" class="llleft">
+			<h1 class="wh">Pledge Nova</h1>
+
+<div class="buttons">
+	<a href="/software/nova"><h2>Be a Nova Beta Tester</h2></a>
+	<a href="https://www.kickstarter.com" class="spw"><h2>Pledge</h2></a>
+</div>
+</div>
+</div>
+		</div>
+
+
+
+
+		<MoreFromHook />
+		<Download />
+		<Footer />
+	</body>
+</html>
+
+
+
+<style>
+
+	.wh {
+		color: #eeeeee;
+	}
+	.big {
+		text-align: left;
+    background-image: url("/nova-back.png");
+    background-position: right bottom;
+    background-color: rgb(247, 247, 248); /* Usado si la imagen no está disponible */
+    height: 104vh;
+    background-repeat: no-repeat; /* No repetir la imagen */
+    background-size: contain; 
+	}
+
+
+	.bigtwo {
+		text-align: left;
+background-image: url("/DE1310A9-6E3B-49A6-8B91-80C83957490F_1_201_a.jpeg");
+    background-position: right bottom;
+    background-color: rgb(66, 66, 66); /* Usado si la imagen no está disponible */
+    height: 60vh;
+    background-repeat: no-repeat; /* No repetir la imagen */
+    background-size: contain; 
+
+	}
+
+	.llleft {
+	margin-left: 2px;
+}
+	@media screen and (max-width: 600px) {
+		.top > *{
+
+margin-left: -50px;
+
+
+
+}
+
+img {
+	margin-top: 25px;
+}
+
+
+
+
+.tttop > h1 {
+	padding-top: 30px;
+}
+
+
+
+img {
+
+
+width: 80px;
+
+
+
+}
+
+	}
+
+
+
+	@media screen  and (min-width: 600px) {
+		img, .tttop {
+			margin-top: 25vh;
+		}
+
+		img {
+			width: 80px;
+		}
+
+
+
+
+	}
+
+	.sp {
+		color: rgb(24, 24, 24);
+	}
+
+	.spw {
+		color: white;
+	}
+
+
+	.content {
+		margin-left: 80px;
+		margin-right: 80px;
+
+		
+
+	}
+
+
+
+
+
+
+	h1 {
+		font-size: 30px;
+		font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+
+	}
+
+	.buttons {
+		display: flex;
+		width: 100%;
+		gap: 15px;
+		justify-content: left;
+		text-decoration: none;
+
+
+	}
+
+	a {
+		text-decoration: none;
+		color: gray;
+		font-weight: 400;
+	}
+
+	h2 {
+		font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+		font-size: 15px;
+		font-weight: 500;
+
+
+	}
+</style>
