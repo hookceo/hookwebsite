@@ -2,7 +2,7 @@
 title: 'Nova Crowfunding'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'March 20 2024'
-heroImage: '/Group 93.png'
+heroImage: '/Group 91.png'
 fullImage: '/Group 100.png'
 author: 'Bernat Clua'
 authorRole: 'CEO, Founder'
